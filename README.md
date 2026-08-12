@@ -12,14 +12,15 @@ control, and form and list configuration.
 ## Scope of this work, stated plainly
 
 This is self-directed laboratory work built in a Personal Developer Instance, not a
-production deployment and not client work. It was built to demonstrate specific
-platform competencies rather than to solve a live business problem. Where this
-README describes a design decision, the decision was mine and I can explain the
-alternatives I rejected; where it describes a limitation, the limitation is real
-and I have not papered over it.
+production deployment and not client work. It is one artifact from ongoing study
+toward the Certified System Administrator credential, alongside ServiceNow
+University coursework. It is not evidence of production administration experience
+and is not presented as such.
 
-I state this up front because a portfolio that overstates its own scope is worth
-less than one that does not.
+Where this README describes a design decision, the decision was mine and I can
+explain the alternatives I rejected; where it describes a limitation, the limitation
+is real and I have not papered over it. A portfolio that overstates its own scope is
+worth less than one that does not.
 
 ---
 
@@ -101,13 +102,17 @@ and I would rather leave it visible than clean it out of the history.
 ```
 .
 ├── README.md                          You are here
+├── LICENSE                            MIT
 ├── docs/
 │   ├── DESIGN_RATIONALE.md            Decisions made and alternatives rejected
 │   └── SCREENSHOT_GUIDE.md            What to capture and how to redact it
-├── update-set/
-│   └── Safety_v1.0.0_update_set.xml   Complete, importable application
-└── screenshots/                       (see SCREENSHOT_GUIDE.md)
+└── update-set/
+    └── Safety_v1.0.0_update_set.xml   Complete, importable application
 ```
+
+- **[Design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)** — every decision made, the alternatives considered, and where the argument cuts against me.
+- **[Screenshot guide](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/SCREENSHOT_GUIDE.md)** — the shot list and redaction rules. Images are not yet captured.
+- **[Update set XML](https://github.com/dustinford02/servicenow-safety-app/blob/main/update-set/Safety_v1.0.0_update_set.xml)** — the complete, importable application.
 
 ## Installing this application
 
@@ -157,16 +162,15 @@ The XML parses cleanly and contains no instance URL, credential, or personal dat
   defensible choice for an application this size, but it means this repository does
   not demonstrate server-side or client-side scripting.
 - **No integration.** Nothing here calls or is called by an external system.
-- **The table is standalone.** See `docs/DESIGN_RATIONALE.md` for why, and for the
-  argument against that choice.
+- **The table is standalone.** See the
+  [design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)
+  for why, and for the argument against that choice.
 - **Four sample records.** Enough to demonstrate the access rules, not enough to
   demonstrate anything about scale.
 - **Built in a single working session.** The timestamps say so and I am not going
   to pretend otherwise.
 
-## Where this sits in a larger effort
+## License
 
-This application is one artifact from ongoing self-directed ServiceNow study
-toward the Certified System Administrator credential, alongside ServiceNow
-University coursework. It is not evidence of production administration experience,
-and it is not presented as such.
+MIT. See [LICENSE](https://github.com/dustinford02/servicenow-safety-app/blob/main/LICENSE).
+The update set is yours to import, inspect, and modify.
