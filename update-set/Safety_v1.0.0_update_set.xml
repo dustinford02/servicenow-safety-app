@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2026-08-12 06:00:37">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<application_name>Safety</application_name>
+<application_scope>x_2190973_safety</application_scope>
+<application_version>1.0.0</application_version>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description> Safety Issue tracking application. Scoped app built in App Engine Studio demonstrating custom table design, role definition, access control configuration, and form/list configuration. Includes 4 sample records.</description>
+<inserted/>
+<name>Safety</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>bd8be95b932e0350890ef85bdd03d6a9</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:27</sys_created_on>
+<sys_id>66cbe9d3932e0350890ef85bdd03d6f3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:27</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_application_209d7221936ec310890ef85bdd03d655</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application"><sys_ui_application action="INSERT_OR_UPDATE"><active>true</active><hint/><name>Safety</name><order/><roles>x_2190973_safety.user</roles><sys_class_name>sys_ui_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:24</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>209d7221936ec310890ef85bdd03d655</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Safety</sys_name><sys_overrides/><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_ui_application_209d7221936ec310890ef85bdd03d655</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:24</sys_updated_on></sys_ui_application></record_update>]]></payload>
+<payload_hash>-480032655</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>04dbe99b932e0350890ef85bdd03d671</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcdec0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>Safety</target_name>
+<type>Application Menu</type>
+<update_domain>global</update_domain>
+<update_guid>ac9d7221a36ec3108f6ae2e6749c1e58</update_guid>
+<update_guid_history>ac9d7221a36ec3108f6ae2e6749c1e58:-480032655</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_5bfc3ead932ec310890ef85bdd03d637</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><federated_id>/lgvptLEWxJD9rd4kByRI0Xv6Mi1mrG3S0Hv+5GyzJY=</federated_id><grantable>true</grantable><includes_roles/><name>x_2190973_safety.user</name><scoped_admin>false</scoped_admin><suffix>user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:25:51</sys_created_on><sys_id>5bfc3ead932ec310890ef85bdd03d637</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety.user</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_user_role_5bfc3ead932ec310890ef85bdd03d637</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:25:51</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>469316177</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>08dbe99b932e0350890ef85bdd03d672</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcd9d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>x_2190973_safety.user</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>1bfc3ead962ec3108be041ce47638d4b</update_guid>
+<update_guid_history>1bfc3ead962ec3108be041ce47638d4b:-1823403164</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_bc9d7221936ec310890ef85bdd03d6a6</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:25</sys_created_on><sys_id>bc9d7221936ec310890ef85bdd03d6a6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.user</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">2c9d7221936ec310890ef85bdd03d6a0</sys_security_acl><sys_update_name>sys_security_acl_role_bc9d7221936ec310890ef85bdd03d6a6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:25</sys_updated_on><sys_user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1730984959</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>33cbe99b932e0350890ef85bdd03d670</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce4e0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>bc9d7221e36ec310a070624b9ee831ae</update_guid>
+<update_guid_history>bc9d7221e36ec310a070624b9ee831ae:-1730984959</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_embedded_help_role_53fc3ead932ec310890ef85bdd03d649</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role"><sys_embedded_help_role action="INSERT_OR_UPDATE"><order>1000</order><role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</role><sys_class_name>sys_embedded_help_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:25:51</sys_created_on><sys_id>53fc3ead932ec310890ef85bdd03d649</sys_id><sys_mod_count>0</sys_mod_count><sys_name>5bfc3ead932ec310890ef85bdd03d637</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_embedded_help_role_53fc3ead932ec310890ef85bdd03d649</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:25:51</sys_updated_on></sys_embedded_help_role></record_update>]]></payload>
+<payload_hash>179287833</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>33cbe9d3932e0350890ef85bdd03d6f8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcd880000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>5bfc3ead932ec310890ef85bdd03d637</target_name>
+<type>Embedded Help Role Priority</type>
+<update_domain>global</update_domain>
+<update_guid/>
+<update_guid_history/>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_eeea7ba993260710890ef85bdd03d6e4</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Allow write for records in x_2190973_safety_safety_issue, for users with role x_2190973_safety.admin.</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue</name><operation display_value="write">write</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:58:09</sys_created_on><sys_id>eeea7ba993260710890ef85bdd03d6e4</sys_id><sys_mod_count>1</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_eeea7ba993260710890ef85bdd03d6e4</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:58:09</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-137139729</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>3bcbe99b932e0350890ef85bdd03d66d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd16a0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>c05bb7e95e2607106bb026fb99a45983</update_guid>
+<update_guid_history>c05bb7e95e2607106bb026fb99a45983:1155136778</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_db_object_4e3d76ed932ec310890ef85bdd03d6bb</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object"><sys_db_object action="INSERT_OR_UPDATE"><access>public</access><actions_access>false</actions_access><alter_access>false</alter_access><caller_access/><client_scripts_access>false</client_scripts_access><configuration_access>false</configuration_access><create_access>false</create_access><create_access_controls>true</create_access_controls><delete_access>false</delete_access><filter_extension/><is_data_interface>false</is_data_interface><is_df_table>false</is_df_table><is_extendable>false</is_extendable><label>Safety Issue</label><live_feed_enabled>false</live_feed_enabled><name>x_2190973_safety_safety_issue</name><number_ref/><provider_class/><read_access>true</read_access><scriptable_table>false</scriptable_table><super_class/><sys_class_name>sys_db_object</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:23</sys_created_on><sys_id>4e3d76ed932ec310890ef85bdd03d6bb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Safety Issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_db_object_4e3d76ed932ec310890ef85bdd03d6bb</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:23</sys_updated_on><update_access>false</update_access><user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</user_role><ws_access>true</ws_access></sys_db_object></record_update>]]></payload>
+<payload_hash>-169345857</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>3bcbe9d3932e0350890ef85bdd03d6f5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcdc70000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue</target_name>
+<type>Table</type>
+<update_domain>global</update_domain>
+<update_guid>959db221146ec3100f746672951e2552</update_guid>
+<update_guid_history>959db221146ec3100f746672951e2552:-169345857</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_6edb7b2d93260710890ef85bdd03d6dd</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 06:01:03</sys_created_on><sys_id>6edb7b2d93260710890ef85bdd03d6dd</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.admin</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">e89d7221936ec310890ef85bdd03d66e</sys_security_acl><sys_update_name>sys_security_acl_role_6edb7b2d93260710890ef85bdd03d6dd</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:01:03</sys_updated_on><sys_user_role display_value="x_2190973_safety.admin" name="x_2190973_safety.admin">f32f2b6193e20710890ef85bdd03d6d4</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-114439539</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>3fcbe99b932e0350890ef85bdd03d66e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd17d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.admin</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>fafbff2d612607108889c6b9d5882abb</update_guid>
+<update_guid_history>fafbff2d612607108889c6b9d5882abb:-114439539</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_x_2190973_safety_safety_issue_assigned_to_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="assigned_to" label="Assigned to" language="en" table="x_2190973_safety_safety_issue"><sys_documentation action="INSERT_OR_UPDATE"><element>assigned_to</element><help/><hint/><label>Assigned to</label><language>en</language><name>x_2190973_safety_safety_issue</name><plural>Assigned to</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:27</sys_created_on><sys_id>dd9db221936ec310890ef85bdd03d60f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Assigned to</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_documentation_x_2190973_safety_safety_issue_assigned_to_en</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:27</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>-123149672</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>3fcbe9d3932e0350890ef85bdd03d6f6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce840000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue.Assigned to</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>559db221436ec3101ab90aa2e9c13b4f</update_guid>
+<update_guid_history>559db221436ec3101ab90aa2e9c13b4f:-123149672</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_list_x_2190973_safety_safety_issue_null</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_list parent="" relationship="" sys_domain="global" table="x_2190973_safety_safety_issue" version="2" view=""><sys_ui_list_element action="INSERT_OR_UPDATE"><average_value>false</average_value><element>assigned_to</element><list_id display_value="x_2190973_safety_safety_issue" element="NULL" name="x_2190973_safety_safety_issue" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">252783e193aec310890ef85bdd03d621</list_id><max_value>false</max_value><min_value>false</min_value><position>0</position><sum>false</sum><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 02:10:14</sys_created_on><sys_id>e52783e193aec310890ef85bdd03d622</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 02:10:14</sys_updated_on></sys_ui_list_element><sys_ui_list action="INSERT_OR_UPDATE"><average_value>false</average_value><element/><max_value>false</max_value><min_value>false</min_value><name>x_2190973_safety_safety_issue</name><parent/><position/><relationship/><sum>false</sum><sys_class_name>sys_ui_list</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 02:10:14</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>252783e193aec310890ef85bdd03d621</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_ui_list_x_2190973_safety_safety_issue_null</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 02:10:14</sys_updated_on><sys_user/><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_list></sys_ui_list></record_update>]]></payload>
+<payload_hash>-232475519</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>48dbe99b932e0350890ef85bdd03d671</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcfaa0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue</target_name>
+<type>List Layout</type>
+<update_domain>global</update_domain>
+<update_guid>2d2747e1f5aec3109fb5c1e74f873e5a</update_guid>
+<update_guid_history>2d2747e1f5aec3109fb5c1e74f873e5a:-232475519</update_guid_history>
+<update_set display_value=""/>
+<view>Default view</view>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_user_role_f32f2b6193e20710890ef85bdd03d6d4</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description>Safety application admin role (lab: full access to Safety Issues via admin-style override)</description><elevated_privilege>false</elevated_privilege><federated_id>LBwA5wi8yMqRu+jmJ0jvnC6WprQ5KqUKPWoIMypcGdo=</federated_id><grantable>true</grantable><includes_roles/><name>x_2190973_safety.admin</name><scoped_admin>false</scoped_admin><suffix>admin</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:05:28</sys_created_on><sys_id>f32f2b6193e20710890ef85bdd03d6d4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety.admin</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_user_role_f32f2b6193e20710890ef85bdd03d6d4</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:05:28</sys_updated_on></sys_user_role></record_update>]]></payload>
+<payload_hash>-154862118</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>4cdbe99b932e0350890ef85bdd03d672</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd00c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>x_2190973_safety.admin</target_name>
+<type>Role</type>
+<update_domain>global</update_domain>
+<update_guid>dc4faf6118e207103b8eddc4360e76bf</update_guid>
+<update_guid_history>dc4faf6118e207103b8eddc4360e76bf:1278804846</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_709d7221936ec310890ef85bdd03d6b7</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:25</sys_created_on><sys_id>709d7221936ec310890ef85bdd03d6b7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.user</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">fc9d7221936ec310890ef85bdd03d6b0</sys_security_acl><sys_update_name>sys_security_acl_role_709d7221936ec310890ef85bdd03d6b7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:25</sys_updated_on><sys_user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1768603018</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>73cbe99b932e0350890ef85bdd03d66f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce3c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>709d7221c26ec310429be6fc782e9abf</update_guid>
+<update_guid_history>709d7221c26ec310429be6fc782e9abf:-1768603018</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_x_2190973_safety_safety_issue_manager_notes_en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="manager_notes" label="Manager Notes" language="en" table="x_2190973_safety_safety_issue"><sys_documentation action="INSERT_OR_UPDATE"><element>manager_notes</element><help/><hint/><label>Manager Notes</label><language>en</language><name>x_2190973_safety_safety_issue</name><plural>Manager Notes</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 06:04:36</sys_created_on><sys_id>26ccb3ed93260710890ef85bdd03d6d4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Manager Notes</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_documentation_x_2190973_safety_safety_issue_manager_notes_en</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:04:36</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>-1491723882</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>73cbe9d3932e0350890ef85bdd03d6f7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1f70000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue.Manager Notes</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>7eccf3edce2607106cf49fbe01bd9c76</update_guid>
+<update_guid_history>7eccf3edce2607106cf49fbe01bd9c76:-1491723882</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_c8f43bad93e20710890ef85bdd03d6c3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:32:04</sys_created_on><sys_id>c8f43bad93e20710890ef85bdd03d6c3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.user</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">bf54b36d93e20710890ef85bdd03d691</sys_security_acl><sys_update_name>sys_security_acl_role_c8f43bad93e20710890ef85bdd03d6c3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:32:04</sys_updated_on><sys_user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1994639293</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>77cbe99b932e0350890ef85bdd03d670</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd0e60000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>0e56f761bd260710d3bec880e22ee709</update_guid>
+<update_guid_history>0e56f761bd260710d3bec880e22ee709:-1994639293,ca5577ed29e20710a59019d879dbf495:-1574339785</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_2c9d7221936ec310890ef85bdd03d6a0</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition table="x_2190973_safety_safety_issue">assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="false" field="assigned_to" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></condition><controlled_by_refs/><decision_type>allow</decision_type><description>Allow read for records in x_2190973_safety_safety_issue, for users with role x_2190973_safety.user, and if the ACL condition (assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ) evaluates to true.</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue</name><operation display_value="read">read</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:24</sys_created_on><sys_id>2c9d7221936ec310890ef85bdd03d6a0</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_2c9d7221936ec310890ef85bdd03d6a0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:14:35</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1073919960</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>77cbe9d3932e0350890ef85bdd03d6f8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd06d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>f151b7a5fde20710a93d1b4c87a349ae</update_guid>
+<update_guid_history>f151b7a5fde20710a93d1b4c87a349ae:1073919960,309d7221bb6ec3101652b19d132964a5:1277338399</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_b09d7221936ec310890ef85bdd03d6c1</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Allow delete for records in x_2190973_safety_safety_issue, for users with role x_2190973_safety.admin.</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue</name><operation display_value="delete">delete</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:25</sys_created_on><sys_id>b09d7221936ec310890ef85bdd03d6c1</sys_id><sys_mod_count>3</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_b09d7221936ec310890ef85bdd03d6c1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:02:36</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-194595617</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>7bcbe99b932e0350890ef85bdd03d66c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1cd0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>b49d7221a36ec31024379f4e1341bfc5</update_guid>
+<update_guid_history>b49d7221a36ec31024379f4e1341bfc5:-255374027</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_fc9d7221936ec310890ef85bdd03d6b0</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition table="x_2190973_safety_safety_issue">assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="false" field="assigned_to" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></condition><controlled_by_refs/><decision_type>allow</decision_type><description>Allow write for records in x_2190973_safety_safety_issue, for users with role x_2190973_safety.user, and if the ACL condition (assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ) evaluates to true.</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue</name><operation display_value="write">write</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:25</sys_created_on><sys_id>fc9d7221936ec310890ef85bdd03d6b0</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_fc9d7221936ec310890ef85bdd03d6b0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:55:49</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>967248089</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>7fcbe99b932e0350890ef85bdd03d66d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd13d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>bdca37a98b2607105b6c156b0d2b8bf3</update_guid>
+<update_guid_history>bdca37a98b2607105b6c156b0d2b8bf3:967248089,f09d7221416ec31080bbc950503d48b5:635823779</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_dictionary_x_2190973_safety_safety_issue_assigned_to</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update&gt;&lt;sys_dictionary action="INSERT_OR_UPDATE" element="assigned_to" table="x_2190973_safety_safety_issue"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes/&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Assigned to&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;assigned_to&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;internal_type display_value="Reference"&gt;reference&lt;/internal_type&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;name&gt;x_2190973_safety_safety_issue&lt;/name&gt;&lt;next_element/&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference display_value="" name="sys_user"&gt;sys_user&lt;/reference&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_dictionary&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-07 01:28:22&lt;/sys_created_on&gt;&lt;sys_id&gt;6e3db2ed932ec310890ef85bdd03d6bb&lt;/sys_id&gt;&lt;sys_name&gt;Assigned to&lt;/sys_name&gt;&lt;sys_package display_value="Safety" source="x_2190973_safety"&gt;cbdc3aad932ec310890ef85bdd03d670&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Safety"&gt;cbdc3aad932ec310890ef85bdd03d670&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_dictionary_x_2190973_safety_safety_issue_assigned_to&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-07 01:30:38&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_dictionary&gt;&lt;/record_update&gt;</payload>
+<payload_hash>310533110</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>7fcbe9d3932e0350890ef85bdd03d6f5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcf110000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue.Assigned to</target_name>
+<type>Dictionary</type>
+<update_domain>global</update_domain>
+<update_guid>a91e3661c46ec31022238b619c46dd91</update_guid>
+<update_guid_history>a91e3661c46ec31022238b619c46dd91:310533110,5c9d32217a6ec3101d012d67845196eb:-668430756</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>ua_table_licensing_config_d99db221936ec310890ef85bdd03d645</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config"><ua_table_licensing_config action="INSERT_OR_UPDATE"><is_fulfillment>false</is_fulfillment><license_condition/><license_model>none</license_model><license_roles/><name>x_2190973_safety_safety_issue</name><op_delete>true</op_delete><op_insert>true</op_insert><op_update>true</op_update><owner_condition/><sys_class_name>ua_table_licensing_config</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:27</sys_created_on><sys_id>d99db221936ec310890ef85bdd03d645</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>ua_table_licensing_config_d99db221936ec310890ef85bdd03d645</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:27</sys_updated_on></ua_table_licensing_config></record_update>]]></payload>
+<payload_hash>359048148</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>80dbe99b932e0350890ef85bdd03d673</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce680000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Table Subscription Configuration</type>
+<update_domain>global</update_domain>
+<update_guid/>
+<update_guid_history/>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_module_6c9d7221936ec310890ef85bdd03d65a</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Safety">209d7221936ec310890ef85bdd03d655</application><filter/><name>Safety Issues</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_2190973_safety.user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:24</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>6c9d7221936ec310890ef85bdd03d65a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Safety Issues</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_ui_module_6c9d7221936ec310890ef85bdd03d65a</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:24</sys_updated_on><table>x_2190973_safety_safety_issue</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+<payload_hash>-1220346434</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>8cdbe99b932e0350890ef85bdd03d671</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce120000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issues</target_name>
+<type>Module</type>
+<update_domain>global</update_domain>
+<update_guid>609d7221576ec3101b5ab02bf74c056c</update_guid>
+<update_guid_history>609d7221576ec3101b5ab02bf74c056c:-1220346434</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_application_03fc3ae9932ec310890ef85bdd03d60d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><name>u_safety</name><order>100</order><roles>x_2190973_safety.user</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:25:51</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>03fc3ae9932ec310890ef85bdd03d60d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Safety</sys_name><sys_overrides/><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_app_application_03fc3ae9932ec310890ef85bdd03d60d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:25:53</sys_updated_on><title>Safety</title><view_name/></sys_app_application></record_update>]]></payload>
+<payload_hash>-222985467</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:27</sys_created_on>
+<sys_id>aecbe9d3932e0350890ef85bdd03d6f3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcdb40000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:27</sys_updated_on>
+<table/>
+<target_name>Safety</target_name>
+<type>Application Menu</type>
+<update_domain>global</update_domain>
+<update_guid>fbfc3eade32ec31096e42eba898755cb</update_guid>
+<update_guid_history>fbfc3eade32ec31096e42eba898755cb:-222985467,5ffc3eade72ec3101539819fde3cff34:1013106096</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_209d7221936ec310890ef85bdd03d679</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:24</sys_created_on><sys_id>209d7221936ec310890ef85bdd03d679</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.user</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">e89d7221936ec310890ef85bdd03d66e</sys_security_acl><sys_update_name>sys_security_acl_role_209d7221936ec310890ef85bdd03d679</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:24</sys_updated_on><sys_user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>489988543</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>b3cbe99b932e0350890ef85bdd03d66e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce010000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>a49d7221ec6ec310853ecbf86ac4639e</update_guid>
+<update_guid_history>a49d7221ec6ec310853ecbf86ac4639e:489988543</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_dictionary_x_2190973_safety_safety_issue_manager_notes</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update&gt;&lt;sys_dictionary action="INSERT_OR_UPDATE" element="manager_notes" table="x_2190973_safety_safety_issue"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes/&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Manager Notes&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;manager_notes&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;255&lt;/max_length&gt;&lt;name&gt;x_2190973_safety_safety_issue&lt;/name&gt;&lt;next_element/&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_dictionary&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-07 06:04:32&lt;/sys_created_on&gt;&lt;sys_id&gt;749cbbad93260710890ef85bdd03d6a0&lt;/sys_id&gt;&lt;sys_name&gt;Manager Notes&lt;/sys_name&gt;&lt;sys_package display_value="Safety" source="x_2190973_safety"&gt;cbdc3aad932ec310890ef85bdd03d670&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Safety"&gt;cbdc3aad932ec310890ef85bdd03d670&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_dictionary_x_2190973_safety_safety_issue_manager_notes&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-07 06:04:32&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_dictionary&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1347938944</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>b3cbe9d3932e0350890ef85bdd03d6f6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1e60000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue.Manager Notes</target_name>
+<type>Dictionary</type>
+<update_domain>global</update_domain>
+<update_guid>faccf3edf8260710a6441ec130938d73</update_guid>
+<update_guid_history>faccf3edf8260710a6441ec130938d73:-1347938944</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_7e2c3b6d93260710890ef85bdd03d6b3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 06:02:33</sys_created_on><sys_id>7e2c3b6d93260710890ef85bdd03d6b3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.admin</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">b09d7221936ec310890ef85bdd03d6c1</sys_security_acl><sys_update_name>sys_security_acl_role_7e2c3b6d93260710890ef85bdd03d6b3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:02:33</sys_updated_on><sys_user_role display_value="x_2190973_safety.admin" name="x_2190973_safety.admin">f32f2b6193e20710890ef85bdd03d6d4</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-1349231693</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>b7cbe99b932e0350890ef85bdd03d66f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1af0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.admin</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>b45c3b6dbd26071046dc097f769a3fe8</update_guid>
+<update_guid_history>b45c3b6dbd26071046dc097f769a3fe8:-1349231693</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_documentation_x_2190973_safety_safety_issue__en</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="" label="Safety Issue" language="en" table="x_2190973_safety_safety_issue"><sys_documentation action="INSERT_OR_UPDATE"><element/><help/><hint/><label>Safety Issue</label><language>en</language><name>x_2190973_safety_safety_issue</name><plural>Safety Issues</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:27</sys_created_on><sys_id>059d7221936ec310890ef85bdd03d6da</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Safety Issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_documentation_x_2190973_safety_safety_issue__en</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:27</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+<payload_hash>1457164261</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>b7cbe9d3932e0350890ef85bdd03d6f7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce5a0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue</target_name>
+<type>Field Label</type>
+<update_domain>global</update_domain>
+<update_guid>999db221dd6ec310d94eed595292114c</update_guid>
+<update_guid_history>999db221dd6ec310d94eed595292114c:1457164261</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_ce3bf3e993260710890ef85bdd03d65b</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:57:45</sys_created_on><sys_id>ce3bf3e993260710890ef85bdd03d65b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.x_2190973_safety.admin</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">eeea7ba993260710890ef85bdd03d6e4</sys_security_acl><sys_update_name>sys_security_acl_role_ce3bf3e993260710890ef85bdd03d65b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:57:45</sys_updated_on><sys_user_role display_value="x_2190973_safety.admin" name="x_2190973_safety.admin">f32f2b6193e20710890ef85bdd03d6d4</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>524910242</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>bbcbe99b932e0350890ef85bdd03d670</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1540000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>.x_2190973_safety.admin</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>823bf3e902260710bbd45275542b6361</update_guid>
+<update_guid_history>823bf3e902260710bbd45275542b6361:2023658876</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_adecf7ed93260710890ef85bdd03d67d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Allow read for manager_notes in x_2190973_safety_safety_issue, for users with role x_2190973_safety.admin.</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue.manager_notes</name><operation display_value="read">read</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 06:07:32</sys_created_on><sys_id>adecf7ed93260710890ef85bdd03d67d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>x_2190973_safety_safety_issue.manager_notes</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_adecf7ed93260710890ef85bdd03d67d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:07:34</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>1114908609</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>bbcbe9d3932e0350890ef85bdd03d6f8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd2310000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue.manager_notes</table>
+<target_name>x_2190973_safety_safety_issue.manager_notes</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>6d7dbf21a166071016c8f2a2934adc09</update_guid>
+<update_guid_history>6d7dbf21a166071016c8f2a2934adc09:989499046</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_bf54b36d93e20710890ef85bdd03d691</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Allow read for records in x_2190973_safety_safety_issue, for users with role x_2190973_safety.admin.</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue</name><operation display_value="read">read</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:27:49</sys_created_on><sys_id>bf54b36d93e20710890ef85bdd03d691</sys_id><sys_mod_count>3</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_bf54b36d93e20710890ef85bdd03d691</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:36:27</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>861429300</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>bfcbe99b932e0350890ef85bdd03d66c</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd11d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>8256f7610c260710ab473d6d1424db1d</update_guid>
+<update_guid_history>8256f7610c260710ab473d6d1424db1d:861429300,abc5ffed85e20710c9480992ea32dc4b:1073919960,865577edc2e207103b2c0c86da3ee19e:-1570318706,f754b36d77e2071095cff1c6f3560396:1555638504</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_cbdc3aad932ec310890ef85bdd03d670</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app"><sys_app action="INSERT_OR_UPDATE"><active>true</active><can_edit_in_studio>true</can_edit_in_studio><enforce_license>log</enforce_license><guided_setup_guid/><hide_on_ui>false</hide_on_ui><ide_created>FORM</ide_created><installed_as_dependency>false</installed_as_dependency><js_level>es_latest</js_level><licensable>true</licensable><license/><license_category>none</license_category><license_definition/><license_model>none</license_model><logo/><menu display_value="Safety">03fc3ae9932ec310890ef85bdd03d60d</menu><name>Safety</name><package_json/><package_resolver_version>1.0.0</package_resolver_version><private>false</private><restrict_table_access>false</restrict_table_access><runtime_access_tracking/><scope>x_2190973_safety</scope><scoped_administration>false</scoped_administration><short_description/><source>x_2190973_safety</source><store_correlation_id/><store_url/><subscription_entitlement/><sys_class_name>sys_app</sys_class_name><sys_code/><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:25:52</sys_created_on><sys_id>cbdc3aad932ec310890ef85bdd03d670</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:25:52</sys_updated_on><template/><trackable>true</trackable><uninstall_blocked>false</uninstall_blocked><user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</user_role><vendor/><vendor_prefix/><version>1.0.0</version></sys_app><sys_translated_text action="delete_multiple" query="documentkey=cbdc3aad932ec310890ef85bdd03d670"/></record_update>]]></payload>
+<payload_hash>290322364</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>bfcbe9d3932e0350890ef85bdd03d6f4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcd710000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>Safety</target_name>
+<type>Custom Application</type>
+<update_domain>global</update_domain>
+<update_guid>2bfc3ead282ec310ab1c263a93a36f85</update_guid>
+<update_guid_history>2bfc3ead282ec310ab1c263a93a36f85:290322364</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_section_54037b2993e20710890ef85bdd03d65f</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="54037b2993e20710890ef85bdd03d65f" sys_domain="global" table="x_2190973_safety_safety_issue" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>assigned_to</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:21:52</sys_created_on><sys_id>2403bf6993e20710890ef85bdd03d629</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_2190973_safety_safety_issue" sys_domain="global" view="Default view">54037b2993e20710890ef85bdd03d65f</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:21:52</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>manager_notes</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 06:04:35</sys_created_on><sys_id>1eccb3ed93260710890ef85bdd03d6ce</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_2190973_safety_safety_issue" sys_domain="global" view="Default view">54037b2993e20710890ef85bdd03d65f</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:04:35</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_2190973_safety_safety_issue</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:21:51</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>54037b2993e20710890ef85bdd03d65f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_overrides/><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_ui_section_54037b2993e20710890ef85bdd03d65f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:21:51</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+<payload_hash>-1101395123</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>c0dbe99b932e0350890ef85bdd03d672</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd0a50000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue</target_name>
+<type>Form Layout</type>
+<update_domain>global</update_domain>
+<update_guid>daccb3edfd260710a79ac5e84bc40fd1</update_guid>
+<update_guid_history>daccb3edfd260710a79ac5e84bc40fd1:-1101395123,e003bf6918e207109bf6fb684208582c:1076957959,a003bf695be207107efad996f6d2b824:1504114879</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_e89d7221936ec310890ef85bdd03d66e</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><controlled_by_refs/><decision_type>allow</decision_type><description>Allow create for records in x_2190973_safety_safety_issue, for users with roles (x_2190973_safety.user, x_2190973_safety.admin).</description><local_or_existing>Existing</local_or_existing><name>x_2190973_safety_safety_issue</name><operation display_value="create">create</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:24</sys_created_on><sys_id>e89d7221936ec310890ef85bdd03d66e</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_2190973_safety_safety_issue</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_security_acl_e89d7221936ec310890ef85bdd03d66e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:01:04</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+<payload_hash>-1228228782</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>f3cbe99b932e0350890ef85bdd03d66d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd19d0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue</target_name>
+<type>Access Control</type>
+<update_domain>global</update_domain>
+<update_guid>6c9d7221586ec310dc49efde6366a976</update_guid>
+<update_guid_history>6c9d7221586ec310dc49efde6366a976:-1251051309</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_app_module_589d7221936ec310890ef85bdd03d633</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Safety">03fc3ae9932ec310890ef85bdd03d60d</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Safety Issues</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_2190973_safety_safety_issue</name><order/><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles>x_2190973_safety.user</roles><route/><screen/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:23</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>589d7221936ec310890ef85bdd03d633</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Safety Issues</sys_name><sys_overrides/><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_app_module_589d7221936ec310890ef85bdd03d633</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:23</sys_updated_on><timeline_page/><title>Safety Issues</title><uncancelable>false</uncancelable><ux_list/><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+<payload_hash>309466881</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>f3cbe9d3932e0350890ef85bdd03d6f5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcdd90000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issues</target_name>
+<type>Module</type>
+<update_domain>global</update_domain>
+<update_guid>e89d7221726ec3103256b15a47bcba52</update_guid>
+<update_guid_history>e89d7221726ec3103256b15a47bcba52:309466881</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_349d7221936ec310890ef85bdd03d6c7</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="DELETE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 01:28:25</sys_created_on><sys_id>349d7221936ec310890ef85bdd03d6c7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.user</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">b09d7221936ec310890ef85bdd03d6c1</sys_security_acl><sys_update_name>sys_security_acl_role_349d7221936ec310890ef85bdd03d6c7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 01:28:25</sys_updated_on><sys_user_role display_value="x_2190973_safety.user" name="x_2190973_safety.user">5bfc3ead932ec310890ef85bdd03d637</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>-382992015</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>f7cbe99b932e0350890ef85bdd03d66e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1bb0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.user</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>8d5c33adff2607101295bbb35fe363b0</update_guid>
+<update_guid_history>8d5c33adff2607101295bbb35fe363b0:-382992015,349d72210d6ec310cba8b1d5764857cf:37307493</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_dictionary_x_2190973_safety_safety_issue_null</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update&gt;&lt;sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_2190973_safety_safety_issue"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;enforce_dot_walk_cross_scope_access=true&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;internal_type display_value="Collection"&gt;collection&lt;/internal_type&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;name&gt;x_2190973_safety_safety_issue&lt;/name&gt;&lt;next_element/&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_dictionary&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-08-07 01:28:25&lt;/sys_created_on&gt;&lt;sys_id&gt;349d7221936ec310890ef85bdd03d6d1&lt;/sys_id&gt;&lt;sys_name&gt;x_2190973_safety_safety_issue&lt;/sys_name&gt;&lt;sys_package display_value="Safety" source="x_2190973_safety"&gt;cbdc3aad932ec310890ef85bdd03d670&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Safety"&gt;cbdc3aad932ec310890ef85bdd03d670&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_dictionary_x_2190973_safety_safety_issue_null&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-08-07 01:28:25&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_dictionary&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-654469596</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>f7cbe9d3932e0350890ef85bdd03d6f6</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dce290000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>Safety Issue</target_name>
+<type>Dictionary</type>
+<update_domain>global</update_domain>
+<update_guid>d19db221616ec3101da44a9102884749</update_guid>
+<update_guid_history>d19db221616ec3101da44a9102884749:-654469596</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_90063f2193260710890ef85bdd03d60b</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:36:27</sys_created_on><sys_id>90063f2193260710890ef85bdd03d60b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2190973_safety_safety_issue.x_2190973_safety.admin</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue">bf54b36d93e20710890ef85bdd03d691</sys_security_acl><sys_update_name>sys_security_acl_role_90063f2193260710890ef85bdd03d60b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:36:27</sys_updated_on><sys_user_role display_value="x_2190973_safety.admin" name="x_2190973_safety.admin">f32f2b6193e20710890ef85bdd03d6d4</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>340928005</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>fbcbe99b932e0350890ef85bdd03d66f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd1040000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue</table>
+<target_name>x_2190973_safety_safety_issue.x_2190973_safety.admin</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>c656f76147260710b87fc50326654314</update_guid>
+<update_guid_history>c656f76147260710b87fc50326654314:340928005</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_embedded_help_role_184f2b6193e20710890ef85bdd03d6d0</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role"><sys_embedded_help_role action="INSERT_OR_UPDATE"><order>10</order><role display_value="x_2190973_safety.admin" name="x_2190973_safety.admin">f32f2b6193e20710890ef85bdd03d6d4</role><sys_class_name>sys_embedded_help_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 05:05:28</sys_created_on><sys_id>184f2b6193e20710890ef85bdd03d6d0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>f32f2b6193e20710890ef85bdd03d6d4</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_update_name>sys_embedded_help_role_184f2b6193e20710890ef85bdd03d6d0</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 05:05:28</sys_updated_on></sys_embedded_help_role></record_update>]]></payload>
+<payload_hash>1240316597</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>fbcbe9d3932e0350890ef85bdd03d6f7</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dcfd30000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table/>
+<target_name>f32f2b6193e20710890ef85bdd03d6d4</target_name>
+<type>Embedded Help Role Priority</type>
+<update_domain>global</update_domain>
+<update_guid/>
+<update_guid_history/>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</application>
+<category>customer</category>
+<comments/>
+<name>sys_security_acl_role_d65df72193660710890ef85bdd03d643</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-07 06:07:03</sys_created_on><sys_id>d65df72193660710890ef85bdd03d643</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.x_2190973_safety.admin</sys_name><sys_package display_value="Safety" source="x_2190973_safety">cbdc3aad932ec310890ef85bdd03d670</sys_package><sys_policy/><sys_scope display_value="Safety">cbdc3aad932ec310890ef85bdd03d670</sys_scope><sys_security_acl display_value="x_2190973_safety_safety_issue.manager_notes">adecf7ed93260710890ef85bdd03d67d</sys_security_acl><sys_update_name>sys_security_acl_role_d65df72193660710890ef85bdd03d643</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-07 06:07:03</sys_updated_on><sys_user_role display_value="x_2190973_safety.admin" name="x_2190973_safety.admin">f32f2b6193e20710890ef85bdd03d6d4</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+<payload_hash>1855126385</payload_hash>
+<remote_update_set display_value="Safety">66cbe9d3932e0350890ef85bdd03d6f3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-08-12 06:00:33</sys_created_on>
+<sys_id>ffcbe99b932e0350890ef85bdd03d670</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ff48dd2120000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-08-12 06:00:33</sys_updated_on>
+<table>x_2190973_safety_safety_issue.manager_notes</table>
+<target_name>.x_2190973_safety.admin</target_name>
+<type>Access Roles</type>
+<update_domain>global</update_domain>
+<update_guid>aa5df721ee6607108daa34472e516448</update_guid>
+<update_guid_history>aa5df721ee6607108daa34472e516448:141222380</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
