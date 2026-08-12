@@ -9,7 +9,14 @@ desktop.ini
 *.swp
 
 # Never commit these
-*.pdf
 credentials*
 *instance*details*
 *access*details*
+*Lab Instance Details*
+
+# Source PDFs are excluded by default because the originals in this project
+# carry credentials. Intentional PDFs (redacted diagrams, exported docs) are
+# allowed from docs/ and screenshots/.
+*.pdf
+!docs/**/*.pdf
+!screenshots/**/*.pdf
