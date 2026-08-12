@@ -67,6 +67,22 @@ distribute permissions between them.
 | 6 | delete | table | admin | none |
 | 7 | read | `manager_notes` field | admin | none |
 
+![The seven access control rules for the x_2190973_safety scope](screenshots/04-access-controls-list.png)
+
+*Two rows carry a condition restricting rows to the current user. The seventh row is the
+field-level rule on `manager_notes`.*
+
+**The same list, as two different roles.**
+
+| As administrator | As `x_2190973_safety.user` |
+|:--|:--|
+| ![Safety Issues list as administrator: four records, Manager Notes column visible](screenshots/07-list-as-admin.png) | ![Safety Issues list as a demo user: two records, no Manager Notes column](screenshots/08-list-as-user.png) |
+
+Left: signed in as administrator, all four records, `Manager Notes` visible. Right: the
+identical list while impersonating a demo user holding only `x_2190973_safety.user`. Two
+records instead of four, and the `Manager Notes` column is not merely blank, it is not
+present. That is rules 2, 4, and 7 running, not asserted.
+
 ### Why it is built this way
 
 **Each operation gets its own rule.** Create, read, write, and delete are four
@@ -106,12 +122,16 @@ and I would rather leave it visible than clean it out of the history.
 ├── docs/
 │   ├── DESIGN_RATIONALE.md            Decisions made and alternatives rejected
 │   └── SCREENSHOT_GUIDE.md            What to capture and how to redact it
+├── screenshots/                       Referenced from this README
+│   ├── 04-access-controls-list.png
+│   ├── 07-list-as-admin.png
+│   └── 08-list-as-user.png
 └── update-set/
     └── Safety_v1.0.0_update_set.xml   Complete, importable application
 ```
 
 - **[Design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)** — every decision made, the alternatives considered, and where the argument cuts against me.
-- **[Screenshot guide](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/SCREENSHOT_GUIDE.md)** — the shot list and redaction rules. Images are not yet captured.
+- **[Screenshot guide](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/SCREENSHOT_GUIDE.md)** — the shot list and redaction rules used to produce the screenshots below.
 - **[Update set XML](https://github.com/dustinford02/servicenow-safety-app/blob/main/update-set/Safety_v1.0.0_update_set.xml)** — the complete, importable application.
 
 ## Installing this application
