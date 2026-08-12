@@ -100,13 +100,13 @@ and I would rather leave it visible than clean it out of the history.
 
 ```
 .
-âââ README.md                          You are here
-âââ docs/
-â   âââ DESIGN_RATIONALE.md            Decisions made and alternatives rejected
-â   âââ SCREENSHOT_GUIDE.md            What to capture and how to redact it
-âââ update-set/
-â   âââ Safety_v1.0.0_update_set.xml   Complete, importable application
-âââ screenshots/                       (see SCREENSHOT_GUIDE.md)
+├── README.md                          You are here
+├── docs/
+│   ├── DESIGN_RATIONALE.md            Decisions made and alternatives rejected
+│   └── SCREENSHOT_GUIDE.md            What to capture and how to redact it
+├── update-set/
+│   └── Safety_v1.0.0_update_set.xml   Complete, importable application
+└── screenshots/                       (see SCREENSHOT_GUIDE.md)
 ```
 
 ## Installing this application
