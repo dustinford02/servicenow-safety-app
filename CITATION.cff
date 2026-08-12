@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you reference this application, please cite it as below."
+title: "Safety Issue Tracking: A Scoped ServiceNow Application"
+abstract: >-
+  A scoped ServiceNow application built in App Engine Studio,
+  demonstrating custom table design and a role-based security model
+  with per-operation, row-level, and field-level access control,
+  packaged as an importable update set.
+type: software
+authors:
+  - family-names: Ford
+    given-names: Dustin
+    name-suffix: S.
+    orcid: "https://orcid.org/0009-0003-8272-0473"
+version: 1.0.0
+date-released: "2026-08-12"
+license: MIT
+repository-code: "https://github.com/dustinford02/servicenow-safety-app"
+url: "https://dustinford02.github.io/servicenow-safety-app/"
+keywords:
+  - ServiceNow
+  - access control
+  - scoped application
+  - App Engine Studio
+  - portfolio
