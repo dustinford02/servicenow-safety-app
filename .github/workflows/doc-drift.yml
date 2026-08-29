@@ -1,0 +1,80 @@
+name: Documentation drift
+
+# Model B: push and schedule.
+#
+# This check answers one question: does this repository still tell the
+# truth about itself? It compares the README's file tree and relative
+# links against what is actually committed, and the GitHub repository
+# description against the README's own figures.
+#
+# The schedule is the important trigger. Documentation drift is not
+# caused by the commit that edits the README; it is caused by the commit
+# that renames a file and forgets it, and by edits to the repository
+# description, which is GitHub metadata and produces no commit at all.
+# A push-only check cannot see that second class of change, ever.
+#
+# Runs on Python 3 from the stdlib only. No pip install, no package.json,
+# no lockfile to keep current.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/README.md'
+      - 'tools/doc_drift.py'
+      - '.github/workflows/doc-drift.yml'
+  schedule:
+    # 07:19 UTC every Monday.
+    - cron: '19 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    name: Check the repository's claims against its contents
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Read the repository description
+        id: meta
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Read it live rather than from the event payload: a scheduled
+          # run's payload carries the description as of the last push,
+          # which is exactly the stale value this check exists to catch.
+          desc="$(gh api "repos/${GITHUB_REPOSITORY}" --jq '.description // ""')"
+          echo "Description: ${desc:-(none set)}"
+          {
+            echo 'description<<DRIFT_EOF'
+            echo "$desc"
+            echo 'DRIFT_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check for documentation drift
+        # Exit 1 = a README claims a file or link that does not exist.
+        # Exit 2 = no README was found, so nothing could be checked. Both
+        #          fail the job: a repository this check cannot read must
+        #          never be reported as clean.
+        # Number disagreements are warnings and do not fail the job. They
+        # need a human to say which figure is current.
+        #
+        # The description is passed through the environment, never
+        # interpolated into the shell with ${{ }}. Interpolating it would
+        # splice repository metadata straight into a command line, so a
+        # description containing shell syntax would execute rather than be
+        # compared. Anyone who can edit the description could then run
+        # commands in this job.
+        env:
+          REPO_DESCRIPTION: ${{ steps.meta.outputs.description }}
+        run: |
+          python3 tools/doc_drift.py --root . --description "$REPO_DESCRIPTION"
