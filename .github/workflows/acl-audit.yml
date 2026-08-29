@@ -1,0 +1,49 @@
+name: ACL audit
+
+# Model B: push and schedule.
+#
+# The schedule matters more than the push trigger here. This repository
+# is finished (built 2026-08-06, packaged 2026-08-11, tagged v1.0.0), so
+# a push-only check would essentially never fire. The weekly run is what
+# gives this job a reason to exist: it re-audits the committed update set
+# on a cadence, so a future edit, a restored file, or a format change
+# gets caught even if nobody pushes.
+#
+# Runs on Python 3 from the stdlib only. No pip install, no package.json,
+# no lockfile to keep current. That is deliberate: this repository has no
+# dependency manifest today and this check does not introduce one.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'update-set/**.xml'
+      - 'tools/acl_audit.py'
+      - '.github/workflows/acl-audit.yml'
+  schedule:
+    # 06:42 UTC on the 1st of each month.
+    - cron: '42 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit access controls in the packaged update set
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Audit ACLs
+        # Exit 1 = at least one ACL failed a check.
+        # Exit 2 = nothing could be parsed, or a matched file yielded zero
+        #          records. Both fail the job. A file this job cannot read
+        #          must never be reported as clean.
+        run: python3 tools/acl_audit.py 'update-set/*.xml'
