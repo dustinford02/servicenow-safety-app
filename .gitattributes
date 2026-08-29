@@ -1,0 +1,14 @@
+# Keep the audit tooling out of GitHub's language statistics.
+#
+# This repository's substance is ServiceNow configuration: a scoped
+# application exported as update-set XML. The Python under tools/ is
+# supporting automation that checks that XML, not the work itself.
+#
+# Without this rule those few hundred lines win the language badge, and a
+# ServiceNow access-control portfolio piece advertises itself as a Python
+# project to anyone scanning the profile.
+#
+# linguist-detectable=false removes them from the language bar only. The
+# files stay fully visible, diffable, searchable and executable.
+
+tools/* linguist-detectable=false
