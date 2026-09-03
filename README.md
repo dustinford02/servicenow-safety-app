@@ -83,6 +83,13 @@ identical list while impersonating a demo user holding only `x_2190973_safety.us
 records instead of four, and the `Manager Notes` column is not merely blank, it is not
 present. That is rules 2, 4, and 7 running, not asserted.
 
+**[Try it interactively](demo/index.html).** A client-side simulator of these same
+seven rules, running as JavaScript in your browser with no ServiceNow platform behind
+it. Switch between four roles, including a platform administrator, and watch which
+rule grants or denies each operation, field access included. It reimplements the
+access controls for demonstration; the update set XML below remains the authoritative
+artifact.
+
 ### Why it is built this way
 
 **Each operation gets its own rule.** Create, read, write, and delete are four
@@ -117,17 +124,19 @@ and I would rather leave it visible than clean it out of the history.
 
 ```
 .
-├── README.md                          You are here
-├── LICENSE                            MIT
+├── README.md You are here
+├── LICENSE MIT
+├── demo/
+│ └── index.html Interactive access-control simulator
 ├── docs/
-│   ├── DESIGN_RATIONALE.md            Decisions made and alternatives rejected
-│   └── SCREENSHOT_GUIDE.md            What to capture and how to redact it
-├── screenshots/                       Referenced from this README
-│   ├── 04-access-controls-list.png
-│   ├── 07-list-as-admin.png
-│   └── 08-list-as-user.png
+│ ├── DESIGN_RATIONALE.md Decisions made and alternatives rejected
+│ └── SCREENSHOT_GUIDE.md What to capture and how to redact it
+├── screenshots/ Referenced from this README
+│ ├── 04-access-controls-list.png
+│ ├── 07-list-as-admin.png
+│ └── 08-list-as-user.png
 └── update-set/
-    └── Safety_v1.0.0_update_set.xml   Complete, importable application
+└── Safety_v1.0.0_update_set.xml Complete, importable application
 ```
 
 - **[Design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)** — every decision made, the alternatives considered, and where the argument cuts against me.
@@ -141,11 +150,11 @@ form and list layouts, application menu and modules, plus four sample records.
 
 1. In a target instance, go to **Retrieved Update Sets**.
 2. Choose **Import Update Set from XML** and upload
-   `update-set/Safety_v1.0.0_update_set.xml`.
+`update-set/Safety_v1.0.0_update_set.xml`.
 3. Open the retrieved set and **Preview** it. Resolve any collisions.
 4. **Commit** the update set.
 5. Grant a test user `x_2190973_safety.user` and impersonate them to see the
-   row-level and field-level rules take effect.
+row-level and field-level rules take effect.
 
 Step 5 is the one worth doing. The security model is invisible as an administrator,
 because administrators bypass it.
@@ -177,18 +186,18 @@ The XML parses cleanly and contains no instance URL, credential, or personal dat
 ## Honest limitations
 
 - **No flow automation.** There is no Flow Designer flow. Issues are assigned
-  manually. Approval routing would be the natural next addition.
+manually. Approval routing would be the natural next addition.
 - **No business rules or client scripts.** All behavior is declarative. That is a
-  defensible choice for an application this size, but it means this repository does
-  not demonstrate server-side or client-side scripting.
+defensible choice for an application this size, but it means this repository does
+not demonstrate server-side or client-side scripting.
 - **No integration.** Nothing here calls or is called by an external system.
 - **The table is standalone.** See the
-  [design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)
-  for why, and for the argument against that choice.
+[design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)
+for why, and for the argument against that choice.
 - **Four sample records.** Enough to demonstrate the access rules, not enough to
-  demonstrate anything about scale.
+demonstrate anything about scale.
 - **Built in a single working session.** The timestamps say so and I am not going
-  to pretend otherwise.
+to pretend otherwise.
 
 ## License
 
