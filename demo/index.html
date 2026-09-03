@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Access Control Simulator | Safety Issue Tracking</title>
+<meta name="description" content="A browser-based simulator of the seven ServiceNow access controls shipped in the Safety Issue Tracking scoped application. Switch roles and watch each rule grant or deny an operation.">
+<link rel="canonical" href="https://dustinford02.github.io/servicenow-safety-app/demo/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Access control simulator: Safety Issue Tracking">
+<meta property="og:description" content="Switch between four roles and watch which of the seven access controls grants or denies each operation, field access included.">
+<meta property="og:url" content="https://dustinford02.github.io/servicenow-safety-app/demo/">
+<meta name="twitter:card" content="summary">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-alt: #f0f2f5;
+    --text: #16191d;
+    --muted: #5c6570;
+    --border: #d7dce2;
+    --accent: #1f5fd0;
+    --grant: #0f7a55;
+    --grant-bg: #e6f4ee;
+    --deny: #a8302a;
+    --deny-bg: #fbeceb;
+    --notice: #7a5a00;
+    --notice-bg: #fdf5e0;
+    --notice-border: #e3c65c;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171b;
+      --surface: #1c2027;
+      --surface-alt: #23282f;
+      --text: #e6e9ed;
+      --muted: #9aa4b0;
+      --border: #333a43;
+      --accent: #6f9df0;
+      --grant: #4cc79a;
+      --grant-bg: #14312a;
+      --deny: #ef8078;
+      --deny-bg: #35201f;
+      --notice: #e8cd7a;
+      --notice-bg: #2c2617;
+      --notice-border: #5c4d20;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 28px; line-height: 1.25; margin: 0 0 8px; letter-spacing: -0.01em; }
+  h2 { font-size: 18px; margin: 40px 0 12px; letter-spacing: -0.005em; }
+  h3 { font-size: 14px; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  .lede { color: var(--muted); margin-bottom: 24px; }
+  code, .mono { font-family: var(--mono); font-size: 0.9em; }
+
+  .notice {
+    background: var(--notice-bg);
+    border: 1px solid var(--notice-border);
+    border-left-width: 4px;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 28px;
+    font-size: 14.5px;
+  }
+  .notice strong { color: var(--notice); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  /* The list view carries five columns of real content and the trace is
+     fixed-width monospace, so an even split starves the side that needs the
+     room and leaves the other half idle. */
+  .grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+  @media (max-width: 880px) { .grid { grid-template-columns: 1fr; } }
+
+  .roles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .roles button {
+    font: inherit;
+    font-size: 14px;
+    padding: 9px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .roles button:hover { border-color: var(--accent); }
+  .roles button:focus-visible,
+  a:focus-visible,
+  #trace:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .roles button[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+  }
+  #roleNote { font-size: 14px; color: var(--muted); margin: 0 0 24px; min-height: 44px; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 600; }
+  tbody tr:last-child td { border-bottom: none; }
+  .scroll { overflow-x: auto; }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .granted { background: var(--grant-bg); color: var(--grant); }
+  .denied { background: var(--deny-bg); color: var(--deny); }
+  .neutral { background: var(--surface-alt); color: var(--muted); }
+
+  .empty { color: var(--muted); font-style: italic; padding: 14px 2px; font-size: 14px; }
+
+  .noscript {
+    background: var(--deny-bg);
+    border: 1px solid var(--deny);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    font-size: 14.5px;
+  }
+
+  /* pre, not pre-wrap: the trace is column-aligned, and wrapping it mid-line
+     breaks the alignment that makes it readable. It scrolls in its own box. */
+  #trace { font-family: var(--mono); font-size: 12.5px; line-height: 1.65; white-space: pre; overflow-x: auto; margin: 0; }
+  #trace .g { color: var(--grant); font-weight: 600; }
+  #trace .d { color: var(--deny); font-weight: 600; }
+  #trace .h { color: var(--muted); }
+
+  tr.fired td { background: var(--grant-bg); }
+  .rule-num { font-family: var(--mono); color: var(--muted); }
+
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 7px; }
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="notice">
+    <strong>This is a simulation, not a live instance.</strong>
+    Everything below runs as JavaScript in your browser. There is no ServiceNow platform, no database,
+    no session, and no server of any kind behind this page. It reimplements the seven access controls
+    shipped in this application so that the rules can be operated rather than only read about.
+    The authoritative artifact remains the update set XML in the repository.
+  </div>
+
+  <h1>Access control simulator</h1>
+  <p class="lede">
+    Scoped application <code>x_2190973_safety</code>, table <code>x_2190973_safety_safety_issue</code>.
+    Switch the acting role and watch the seven access controls decide what is visible and what is permitted.
+  </p>
+
+  <noscript>
+    <p class="noscript">
+      This page is a JavaScript simulation and there is no server behind it, so with scripting
+      disabled there is nothing to show. The seven access controls it models are documented in
+      full on the <a href="../">project README</a>, and the authoritative artifact is the update
+      set XML in the repository.
+    </p>
+  </noscript>
+
+  <h3 id="rolesLabel">Acting as</h3>
+  <div class="roles" id="roles" role="group" aria-labelledby="rolesLabel"></div>
+  <p id="roleNote" aria-live="polite"></p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>List view</h3>
+      <div class="scroll" id="listView"></div>
+    </div>
+    <div class="card">
+      <h3 id="traceLabel">Evaluation trace</h3>
+      <pre id="trace" tabindex="0" role="region" aria-labelledby="traceLabel"></pre>
+    </div>
+  </div>
+
+  <h2>Operations, record by record</h2>
+  <div class="card scroll" id="opMatrix"></div>
+
+  <h2>The seven access controls</h2>
+  <div class="card scroll" id="ruleTable"></div>
+
+  <h2>What this simulation does not model</h2>
+  <div class="card">
+    <ul>
+      <li>Role inheritance and role containment. Each persona here holds exactly the role named and nothing else.</li>
+      <li>Scripted access controls. All seven rules in this application are declarative, so there is no script to evaluate, but ServiceNow supports scripted conditions that this page cannot represent.</li>
+      <li>Inherited access controls from parent tables, and the wildcard rules that apply platform wide.</li>
+      <li>Elevated privilege. The <code>security_admin</code> elevation that governs the access control table itself is out of scope.</li>
+      <li>Everything ServiceNow does around the access control decision: query business rules, client scripts, UI policies, before-query business rules, and record level security plugins.</li>
+      <li>The sample records. The four rows shown here carry the shape and the assignment split of the packaged records, not their literal field values.</li>
+    </ul>
+    <p style="margin-bottom:0">
+      Access control evaluation as modeled here follows two documented behaviors: multiple rules matching the
+      same object at the same level are combined with OR, so passing any one of them grants the operation; and
+      field access requires the table-level rule to grant first, which is why the field rule on
+      <code>manager_notes</code> is only ever reached by a role that already has table-level read.
+    </p>
+  </div>
+
+  <footer>
+    <a href="../">Back to the project README</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/dustinford02/servicenow-safety-app">Repository</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/dustinford02/servicenow-safety-app/blob/main/update-set/Safety_v1.0.0_update_set.xml">Update set XML</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------------------------------------------------------------------
+  // Sample data. Shape and assignment split match the packaged update set;
+  // field values are representative. Replace with the real four records if
+  // you want the page to mirror the instance exactly.
+  // ---------------------------------------------------------------------
+  var CURRENT_USER = "demo.user";
+
+  var RECORDS = [
+    { number: "SAF0001001", short_description: "Blocked fire exit, Building C stairwell", state: "Open",
+      assigned_to: "demo.user", assigned_label: "Demo User",
+      manager_notes: "Second report this quarter. Facilities notified, tracking to closure." },
+    { number: "SAF0001002", short_description: "Damaged guard rail on loading dock", state: "In Progress",
+      assigned_to: "a.rivera", assigned_label: "A. Rivera",
+      manager_notes: "Vendor repair scheduled. Do not surface cost detail to reporter." },
+    { number: "SAF0001003", short_description: "Chemical storage cabinet unlabeled", state: "Open",
+      assigned_to: "demo.user", assigned_label: "Demo User",
+      manager_notes: "Compliance flagged. Pending safety officer review." },
+    { number: "SAF0001004", short_description: "Emergency lighting failed monthly test", state: "Closed",
+      assigned_to: "j.okafor", assigned_label: "J. Okafor",
+      manager_notes: "Closed after retest. Retained for audit sampling." }
+  ];
+
+  // ---------------------------------------------------------------------
+  // The seven access controls, as built.
+  // ---------------------------------------------------------------------
+  var TABLE = "x_2190973_safety_safety_issue";
+
+  var ACLS = [
+    { id: 1, op: "create", level: "table", target: TABLE,
+      roles: ["x_2190973_safety.user", "x_2190973_safety.admin"], condition: null },
+    { id: 2, op: "read", level: "table", target: TABLE,
+      roles: ["x_2190973_safety.user"], condition: "assigned_to is the current user" },
+    { id: 3, op: "read", level: "table", target: TABLE,
+      roles: ["x_2190973_safety.admin"], condition: null },
+    { id: 4, op: "write", level: "table", target: TABLE,
+      roles: ["x_2190973_safety.user"], condition: "assigned_to is the current user" },
+    { id: 5, op: "write", level: "table", target: TABLE,
+      roles: ["x_2190973_safety.admin"], condition: null },
+    { id: 6, op: "delete", level: "table", target: TABLE,
+      roles: ["x_2190973_safety.admin"], condition: null },
+    { id: 7, op: "read", level: "field", target: "manager_notes",
+      roles: ["x_2190973_safety.admin"], condition: null }
+  ];
+
+  // ---------------------------------------------------------------------
+  // Personas.
+  // ---------------------------------------------------------------------
+  var PERSONAS = {
+    none: {
+      label: "No scoped role",
+      roles: [],
+      bypass: false,
+      note: "A signed-in user holding neither application role. No access control grants this user anything on the table, so the list is empty. This is the default state before a role is assigned."
+    },
+    user: {
+      label: "x_2190973_safety.user",
+      roles: ["x_2190973_safety.user"],
+      bypass: false,
+      note: "The ordinary participant, signed in as " + CURRENT_USER + ". Rules 2 and 4 carry a condition limiting rows to the issues assigned to this user, and rule 7 is never satisfied, so the Manager Notes column is absent rather than blank."
+    },
+    manager: {
+      label: "x_2190973_safety.admin",
+      roles: ["x_2190973_safety.admin"],
+      bypass: false,
+      note: "The manager role defined by this application. Rules 3, 5, 6 and 7 grant unconditional read, write, delete and access to the manager_notes field. This access is granted by the access controls, not inherited from the platform."
+    },
+    platform: {
+      label: "Platform admin",
+      roles: ["admin"],
+      bypass: true,
+      note: "The platform administrator role bypasses access control evaluation entirely. Everything is visible, but nothing below is being enforced. This is why the security model is invisible when signed in as administrator, and why impersonation is the only honest way to test it."
+    }
+  };
+
+  var current = "user";
+  var firedRules = {};
+
+  // ---------------------------------------------------------------------
+  // Evaluation.
+  // ---------------------------------------------------------------------
+  function conditionHolds(acl, record) {
+    if (!acl.condition) return true;
+    if (!record) return false;
+    return record.assigned_to === CURRENT_USER;
+  }
+
+  function evaluateTableOp(op, record, persona) {
+    var steps = [];
+    if (persona.bypass) {
+      return { granted: true, by: "bypass", steps: steps };
+    }
+    var candidates = ACLS.filter(function (a) { return a.level === "table" && a.op === op; });
+    for (var i = 0; i < candidates.length; i++) {
+      var acl = candidates[i];
+      var roleOk = acl.roles.some(function (r) { return persona.roles.indexOf(r) !== -1; });
+      var condOk = roleOk ? conditionHolds(acl, record) : false;
+      steps.push({ acl: acl, roleOk: roleOk, condOk: condOk });
+      if (roleOk && condOk) {
+        return { granted: true, by: acl.id, steps: steps };
+      }
+    }
+    return { granted: false, by: null, steps: steps };
+  }
+
+  function evaluateFieldRead(field, record, persona) {
+    var gate = evaluateTableOp("read", record, persona);
+    if (!gate.granted) {
+      return { granted: false, by: null, gate: gate, reached: false };
+    }
+    if (persona.bypass) {
+      return { granted: true, by: "bypass", gate: gate, reached: false };
+    }
+    var candidates = ACLS.filter(function (a) {
+      return a.level === "field" && a.op === "read" && a.target === field;
+    });
+    for (var i = 0; i < candidates.length; i++) {
+      var acl = candidates[i];
+      var roleOk = acl.roles.some(function (r) { return persona.roles.indexOf(r) !== -1; });
+      if (roleOk && conditionHolds(acl, record)) {
+        return { granted: true, by: acl.id, gate: gate, reached: true };
+      }
+    }
+    return { granted: false, by: null, gate: gate, reached: true };
+  }
+
+  function readableRecords(persona) {
+    return RECORDS.filter(function (r) { return evaluateTableOp("read", r, persona).granted; });
+  }
+
+  function managerNotesVisible(persona) {
+    var visible = readableRecords(persona);
+    if (visible.length === 0) return false;
+    return evaluateFieldRead("manager_notes", visible[0], persona).granted;
+  }
+
+  // ---------------------------------------------------------------------
+  // Rendering.
+  // ---------------------------------------------------------------------
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  // The buttons are built once and then only their pressed state is updated.
+  // Rebuilding them on every render would destroy the element the keyboard is
+  // focused on the moment it is activated, which silently drops a keyboard user
+  // back to the top of the document on every role change.
+  function buildRoles() {
+    var host = document.getElementById("roles");
+    host.innerHTML = "";
+    Object.keys(PERSONAS).forEach(function (key) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = PERSONAS[key].label;
+      b.setAttribute("aria-pressed", String(key === current));
+      b.setAttribute("data-persona", key);
+      b.addEventListener("click", function () { current = key; render(); });
+      host.appendChild(b);
+    });
+  }
+
+  function syncRoles() {
+    var host = document.getElementById("roles");
+    var buttons = host.querySelectorAll("button[data-persona]");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", String(buttons[i].getAttribute("data-persona") === current));
+    }
+    document.getElementById("roleNote").textContent = PERSONAS[current].note;
+  }
+
+  function renderList(persona) {
+    var host = document.getElementById("listView");
+    var rows = readableRecords(persona);
+    if (rows.length === 0) {
+      host.innerHTML = '<p class="empty">No records. Every read rule on this table either requires a role this user does not hold, or a condition this user does not meet.</p>';
+      return;
+    }
+    var showNotes = managerNotesVisible(persona);
+    var html = "<table><thead><tr><th>Number</th><th>Short description</th><th>State</th><th>Assigned to</th>";
+    if (showNotes) html += "<th>Manager notes</th>";
+    html += "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      html += "<tr><td class='mono'>" + esc(r.number) + "</td><td>" + esc(r.short_description) +
+              "</td><td>" + esc(r.state) + "</td><td>" + esc(r.assigned_label) + "</td>";
+      if (showNotes) html += "<td>" + esc(r.manager_notes) + "</td>";
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    html += "<p class='empty' style='padding-top:12px'>" + rows.length + " of " + RECORDS.length +
+            " records readable. Manager Notes column " + (showNotes ? "present." : "absent, not blank.") + "</p>";
+    host.innerHTML = html;
+  }
+
+  function renderTrace(persona) {
+    firedRules = {};
+    var out = [];
+    var g = function (t) { return '<span class="g">' + t + "</span>"; };
+    var d = function (t) { return '<span class="d">' + t + "</span>"; };
+    var h = function (t) { return '<span class="h">' + t + "</span>"; };
+
+    out.push(h("acting roles: ") + (persona.roles.length ? persona.roles.join(", ") : "none"));
+    out.push("");
+
+    if (persona.bypass) {
+      out.push(g("admin bypass"));
+      out.push("The platform admin role short-circuits access control evaluation.");
+      out.push("None of the seven rules is consulted. All " + RECORDS.length + " records and all");
+      out.push("fields are returned because enforcement is skipped, not because it passed.");
+      document.getElementById("trace").innerHTML = out.join("\n");
+      return;
+    }
+
+    out.push(h("── table read ────────────────────────────"));
+    RECORDS.forEach(function (r) {
+      var res = evaluateTableOp("read", r, persona);
+      var line = "  " + r.number + "  ";
+      var detail = res.steps.map(function (s) {
+        var bits = "r" + s.acl.id + " [role " + (s.roleOk ? "✓" : "✗");
+        if (s.acl.condition) bits += " cond " + (s.condOk ? "✓" : "✗");
+        return bits + "]";
+      }).join("  ");
+      if (res.granted) {
+        firedRules[res.by] = true;
+        out.push(line + g("GRANT") + h("  by " + detail));
+      } else {
+        out.push(line + d("DENY ") + h("  " + (detail || "no matching rule")));
+      }
+    });
+
+    out.push("");
+    out.push(h("── field read: manager_notes ─────────────"));
+    var sample = readableRecords(persona)[0];
+    if (!sample) {
+      out.push("  " + d("not reached") + h("  table-level read denied, so the field"));
+      out.push(h("               rule is never evaluated"));
+    } else {
+      var f = evaluateFieldRead("manager_notes", sample, persona);
+      out.push(h("  table gate passed, so field rules are reached"));
+      if (f.granted) {
+        firedRules[f.by] = true;
+        out.push("  " + g("GRANT") + h("  by rule " + f.by));
+      } else {
+        out.push("  " + d("DENY ") + h("  rule 7 requires x_2190973_safety.admin"));
+        out.push(h("         column omitted from the list entirely"));
+      }
+    }
+
+    out.push("");
+    out.push(h("── write / delete / create ───────────────"));
+    ["write", "delete"].forEach(function (op) {
+      var anyGranted = RECORDS.filter(function (r) {
+        var res = evaluateTableOp(op, r, persona);
+        if (res.granted) firedRules[res.by] = true;
+        return res.granted;
+      }).length;
+      out.push("  " + op.padEnd(7) + (anyGranted
+        ? g("GRANT") + h("  on " + anyGranted + " of " + RECORDS.length + " records")
+        : d("DENY ") + h("  no rule grants " + op + " to this role")));
+    });
+    var c = evaluateTableOp("create", null, persona);
+    if (c.granted) firedRules[c.by] = true;
+    out.push("  " + "create ".padEnd(7) + (c.granted
+      ? g("GRANT") + h("  by rule " + c.by)
+      : d("DENY ") + h("  no rule grants create to this role")));
+
+    document.getElementById("trace").innerHTML = out.join("\n");
+  }
+
+  function renderMatrix(persona) {
+    var html = "<table><thead><tr><th>Record</th><th>Read</th><th>Write</th><th>Delete</th><th>manager_notes</th></tr></thead><tbody>";
+    RECORDS.forEach(function (r) {
+      html += "<tr><td class='mono'>" + esc(r.number) + "</td>";
+      ["read", "write", "delete"].forEach(function (op) {
+        var res = evaluateTableOp(op, r, persona);
+        html += "<td>" + badge(res.granted, res.by) + "</td>";
+      });
+      var f = evaluateFieldRead("manager_notes", r, persona);
+      html += "<td>" + (f.gate.granted
+        ? badge(f.granted, f.by)
+        : '<span class="badge neutral">not reached</span>') + "</td>";
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    var c = evaluateTableOp("create", null, persona);
+    html += "<p class='empty' style='padding-top:12px'>New record (create): " +
+            (c.granted ? "permitted" : "denied") + ".</p>";
+    document.getElementById("opMatrix").innerHTML = html;
+  }
+
+  function badge(granted, by) {
+    if (!granted) return '<span class="badge denied">deny</span>';
+    if (by === "bypass") return '<span class="badge granted">allow &middot; bypass</span>';
+    return '<span class="badge granted">allow &middot; rule ' + by + "</span>";
+  }
+
+  function renderRules(persona) {
+    var html = "<table><thead><tr><th>#</th><th>Operation</th><th>Target</th><th>Granted to</th><th>Condition</th><th>This role</th></tr></thead><tbody>";
+    ACLS.forEach(function (a) {
+      var fired = !persona.bypass && firedRules[a.id];
+      html += "<tr" + (fired ? " class='fired'" : "") + ">";
+      html += "<td class='rule-num'>" + a.id + "</td>";
+      html += "<td>" + esc(a.op) + "</td>";
+      html += "<td class='mono'>" + esc(a.level === "field" ? a.target + " (field)" : "table") + "</td>";
+      html += "<td class='mono'>" + esc(a.roles.map(function (r) { return r.replace("x_2190973_safety.", ""); }).join(", ")) + "</td>";
+      html += "<td>" + (a.condition ? esc(a.condition) : "<span class='empty'>none</span>") + "</td>";
+      html += "<td>" + (persona.bypass
+        ? '<span class="badge neutral">bypassed</span>'
+        : (fired ? '<span class="badge granted">fires</span>' : '<span class="badge neutral">no effect</span>')) + "</td>";
+      html += "</tr>";
+    });
+    html += "</tbody></table>";
+    document.getElementById("ruleTable").innerHTML = html;
+  }
+
+  function render() {
+    var persona = PERSONAS[current];
+    syncRoles();
+    renderList(persona);
+    renderTrace(persona);
+    renderMatrix(persona);
+    renderRules(persona);
+  }
+
+  buildRoles();
+  render();
+})();
+</script>
+</body>
+</html>
