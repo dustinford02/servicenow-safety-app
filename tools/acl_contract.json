@@ -1,0 +1,62 @@
+{
+  "_comment": "The access-control contract for update-set/*.xml, asserted by tools/acl_audit.py and cross-checked against the README and simulator by tools/doc_drift.py. Every live ACL must appear here exactly once with exactly these live roles and this condition; any extra ACL is a failure. Role links recorded as DELETE are not grants. 'rule' matches the numbering in the README and demo/index.html.",
+  "acls": [
+    {
+      "rule": 1,
+      "name": "x_2190973_safety_safety_issue",
+      "operation": "create",
+      "roles": ["x_2190973_safety.admin", "x_2190973_safety.user"],
+      "condition": ""
+    },
+    {
+      "rule": 2,
+      "name": "x_2190973_safety_safety_issue",
+      "operation": "read",
+      "roles": ["x_2190973_safety.user"],
+      "condition": "assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ"
+    },
+    {
+      "rule": 3,
+      "name": "x_2190973_safety_safety_issue",
+      "operation": "read",
+      "roles": ["x_2190973_safety.admin"],
+      "condition": ""
+    },
+    {
+      "rule": 4,
+      "name": "x_2190973_safety_safety_issue",
+      "operation": "write",
+      "roles": ["x_2190973_safety.user"],
+      "condition": "assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ"
+    },
+    {
+      "rule": 5,
+      "name": "x_2190973_safety_safety_issue",
+      "operation": "write",
+      "roles": ["x_2190973_safety.admin"],
+      "condition": ""
+    },
+    {
+      "rule": 6,
+      "name": "x_2190973_safety_safety_issue",
+      "operation": "delete",
+      "roles": ["x_2190973_safety.admin"],
+      "condition": ""
+    },
+    {
+      "rule": 7,
+      "name": "x_2190973_safety_safety_issue.manager_notes",
+      "operation": "read",
+      "roles": ["x_2190973_safety.admin"],
+      "condition": ""
+    },
+    {
+      "rule": 8,
+      "name": "x_2190973_safety_safety_issue.manager_notes",
+      "operation": "write",
+      "roles": ["x_2190973_safety.admin"],
+      "condition": ""
+    }
+  ],
+  "navigation_roles": ["x_2190973_safety.user", "x_2190973_safety.admin"]
+}

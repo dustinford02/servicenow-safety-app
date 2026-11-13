@@ -19,6 +19,8 @@ on:
     paths:
       - 'update-set/**.xml'
       - 'tools/acl_audit.py'
+      - 'tools/acl_contract.json'
+      - 'tools/tests/**'
       - '.github/workflows/acl-audit.yml'
   schedule:
     # 06:42 UTC on the 1st of each month.
@@ -41,9 +43,14 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Test the audit itself
+        run: python3 -m unittest discover -s tools/tests -v
+
       - name: Audit ACLs
-        # Exit 1 = at least one ACL failed a check.
-        # Exit 2 = nothing could be parsed, or a matched file yielded zero
-        #          records. Both fail the job. A file this job cannot read
-        #          must never be reported as clean.
+        # Exit 1 = at least one ACL failed a check or broke the contract in
+        #          tools/acl_contract.json.
+        # Exit 2 = nothing could be parsed, a matched file yielded zero
+        #          records, or the contract could not be loaded. Both fail
+        #          the job. A file this job cannot read must never be
+        #          reported as clean.
         run: python3 tools/acl_audit.py 'update-set/*.xml'
