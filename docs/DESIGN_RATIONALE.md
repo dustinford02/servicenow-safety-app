@@ -67,7 +67,7 @@ requirement, and it should be documented as technical debt when you do.
 
 ## 4. Separate rules per operation
 
-**Decision.** Seven access controls rather than a smaller number of broader ones.
+**Decision.** Eight access controls rather than a smaller number of broader ones.
 
 Create, read, write, and delete are distinct operations. A requirement such as
 "ordinary users may read and edit their own issues, managers may do anything,
@@ -83,8 +83,8 @@ where I would rather be too restrictive than too permissive by default.
 
 ## 5. Field-level control on `manager_notes`
 
-**Decision.** A single field-level read rule restricting `manager_notes` to the
-admin role.
+**Decision.** Two field-level rules, read and write, restricting `manager_notes`
+to the admin role.
 
 This is the rule that made the application worth building. Field-level access
 controls in ServiceNow are evaluated *after* table-level ones, and only if a
@@ -97,19 +97,46 @@ making a field *invisible* requires no table change at all, only the field rule.
 The asymmetry catches people out.
 
 An access control naming a specific field is evaluated before a wildcard rule
-covering the rest of the table's fields, which is why one specific rule is
-sufficient here and no wildcard was needed.
+covering the rest of the table's fields, which is why one specific rule per
+operation is sufficient here and no wildcard was needed.
+
+The application first shipped with the read rule only. That hid the field from
+ordinary users but did not, by any rule in the application, stop them writing it:
+the table-level write rule lets a user edit their own issues, and nothing excluded
+`manager_notes` from that. Rule 8 adds the matching write rule. Read and write are
+separate operations at the field level just as they are at the table level, and a
+field that should be invisible to a role should be unwritable by it as well.
 
 ---
 
-## 6. The access control I deleted
+## 6. Both roles on the application menu
 
-The application file history contains a deleted field-level access control.
+**Decision.** The application menu and the Safety Issues module list both
+`x_2190973_safety.user` and `x_2190973_safety.admin`.
+
+App Engine Studio gated navigation on the user role it generated. The admin role
+was added later and given its own access controls, but not added to the menu, so a
+manager holding only the admin role had table access with no way to navigate to it.
+
+**The alternative.** Making the admin role contain the user role would also have
+fixed navigation. It would also have handed every manager the user role's
+conditional rules, which are redundant beside the admin rules but make the effective
+permissions harder to read. Listing both roles on the menu keeps the two roles
+independent, which is what the access control table already assumes.
+
+---
+
+## 7. The access control I deleted
 
 I built a field rule first, tested it by impersonating a user holding only
 `x_2190973_safety.user`, and found the field still behaved as before. The rule I
 had written was not reaching evaluation in the way I assumed. Rebuilding it against
 the correct table-then-field ordering produced rule 7 as it now stands.
+
+That deleted rule is not in the exported update set. What the export does contain
+are two `DELETE` records for role grants, removing `x_2190973_safety.user` from
+rule 3 (the admin read rule) and rule 6 (delete). The ACL audit treats those as
+removals: a deleted grant is not counted as a role protecting the rule.
 
 I have left the deletion in the history rather than rewriting it away. A record of
 having tested something and found it wrong is more informative than a clean history
@@ -119,7 +146,7 @@ lab, is considerably cheaper than making it in production.
 
 ---
 
-## 7. Publishing to a named update set
+## 8. Publishing to a named update set
 
 **Decision.** The application was published to a named update set rather than
 relying on whatever had been captured during development.

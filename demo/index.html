@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Access Control Simulator | Safety Issue Tracking</title>
-<meta name="description" content="A browser-based simulator of the seven ServiceNow access controls shipped in the Safety Issue Tracking scoped application. Switch roles and watch each rule grant or deny an operation.">
+<meta name="description" content="A browser-based simulator of the eight ServiceNow access controls shipped in the Safety Issue Tracking scoped application. Switch roles and watch each rule grant or deny an operation.">
 <link rel="canonical" href="https://dustinford02.github.io/servicenow-safety-app/demo/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Access control simulator: Safety Issue Tracking">
-<meta property="og:description" content="Switch between four roles and watch which of the seven access controls grants or denies each operation, field access included.">
+<meta property="og:description" content="Switch between four roles and watch which of the eight access controls grants or denies each operation, field access included.">
 <meta property="og:url" content="https://dustinford02.github.io/servicenow-safety-app/demo/">
 <meta name="twitter:card" content="summary">
 <style>
@@ -163,7 +163,7 @@
   <div class="notice">
     <strong>This is a simulation, not a live instance.</strong>
     Everything below runs as JavaScript in your browser. There is no ServiceNow platform, no database,
-    no session, and no server of any kind behind this page. It reimplements the seven access controls
+    no session, and no server of any kind behind this page. It reimplements the eight access controls
     shipped in this application so that the rules can be operated rather than only read about.
     The authoritative artifact remains the update set XML in the repository.
   </div>
@@ -171,13 +171,13 @@
   <h1>Access control simulator</h1>
   <p class="lede">
     Scoped application <code>x_2190973_safety</code>, table <code>x_2190973_safety_safety_issue</code>.
-    Switch the acting role and watch the seven access controls decide what is visible and what is permitted.
+    Switch the acting role and watch the eight access controls decide what is visible and what is permitted.
   </p>
 
   <noscript>
     <p class="noscript">
       This page is a JavaScript simulation and there is no server behind it, so with scripting
-      disabled there is nothing to show. The seven access controls it models are documented in
+      disabled there is nothing to show. The eight access controls it models are documented in
       full on the <a href="../">project README</a>, and the authoritative artifact is the update
       set XML in the repository.
     </p>
@@ -201,18 +201,18 @@
   <h2>Operations, record by record</h2>
   <div class="card scroll" id="opMatrix"></div>
 
-  <h2>The seven access controls</h2>
+  <h2>The eight access controls</h2>
   <div class="card scroll" id="ruleTable"></div>
 
   <h2>What this simulation does not model</h2>
   <div class="card">
     <ul>
       <li>Role inheritance and role containment. Each persona here holds exactly the role named and nothing else.</li>
-      <li>Scripted access controls. All seven rules in this application are declarative, so there is no script to evaluate, but ServiceNow supports scripted conditions that this page cannot represent.</li>
+      <li>Scripted access controls. All eight rules in this application are declarative, so there is no script to evaluate, but ServiceNow supports scripted conditions that this page cannot represent.</li>
       <li>Inherited access controls from parent tables, and the wildcard rules that apply platform wide.</li>
       <li>Elevated privilege. The <code>security_admin</code> elevation that governs the access control table itself is out of scope.</li>
       <li>Everything ServiceNow does around the access control decision: query business rules, client scripts, UI policies, before-query business rules, and record level security plugins.</li>
-      <li>The sample records. The four rows shown here carry the shape and the assignment split of the packaged records, not their literal field values.</li>
+      <li>The sample records. The update set ships no data; the four rows shown here carry the shape and the assignment split of the records on the development instance, not their literal field values.</li>
     </ul>
     <p style="margin-bottom:0">
       Access control evaluation as modeled here follows two documented behaviors: multiple rules matching the
@@ -236,9 +236,9 @@
   "use strict";
 
   // ---------------------------------------------------------------------
-  // Sample data. Shape and assignment split match the packaged update set;
-  // field values are representative. Replace with the real four records if
-  // you want the page to mirror the instance exactly.
+  // Sample data. The update set ships no records; shape and assignment split
+  // match the four records on the development instance, and field values are
+  // representative.
   // ---------------------------------------------------------------------
   var CURRENT_USER = "demo.user";
 
@@ -258,7 +258,8 @@
   ];
 
   // ---------------------------------------------------------------------
-  // The seven access controls, as built.
+  // The eight access controls, as built. Must match tools/acl_contract.json;
+  // tools/doc_drift.py compares this list against the update set.
   // ---------------------------------------------------------------------
   var TABLE = "x_2190973_safety_safety_issue";
 
@@ -276,6 +277,8 @@
     { id: 6, op: "delete", level: "table", target: TABLE,
       roles: ["x_2190973_safety.admin"], condition: null },
     { id: 7, op: "read", level: "field", target: "manager_notes",
+      roles: ["x_2190973_safety.admin"], condition: null },
+    { id: 8, op: "write", level: "field", target: "manager_notes",
       roles: ["x_2190973_safety.admin"], condition: null }
   ];
 
@@ -293,13 +296,13 @@
       label: "x_2190973_safety.user",
       roles: ["x_2190973_safety.user"],
       bypass: false,
-      note: "The ordinary participant, signed in as " + CURRENT_USER + ". Rules 2 and 4 carry a condition limiting rows to the issues assigned to this user, and rule 7 is never satisfied, so the Manager Notes column is absent rather than blank."
+      note: "The ordinary participant, signed in as " + CURRENT_USER + ". Rules 2 and 4 carry a condition limiting rows to the issues assigned to this user. Rules 7 and 8 are never satisfied, so the Manager Notes column is absent rather than blank, and the field cannot be written even on records this user may edit."
     },
     manager: {
       label: "x_2190973_safety.admin",
       roles: ["x_2190973_safety.admin"],
       bypass: false,
-      note: "The manager role defined by this application. Rules 3, 5, 6 and 7 grant unconditional read, write, delete and access to the manager_notes field. This access is granted by the access controls, not inherited from the platform."
+      note: "The manager role defined by this application. Rules 3, 5, 6, 7 and 8 grant unconditional read, write and delete, and read and write on the manager_notes field. The application menu lists this role as well, so a manager holding only it can open the application. This access is granted by the access controls, not inherited from the platform."
     },
     platform: {
       label: "Platform admin",
@@ -339,8 +342,8 @@
     return { granted: false, by: null, steps: steps };
   }
 
-  function evaluateFieldRead(field, record, persona) {
-    var gate = evaluateTableOp("read", record, persona);
+  function evaluateFieldOp(op, field, record, persona) {
+    var gate = evaluateTableOp(op, record, persona);
     if (!gate.granted) {
       return { granted: false, by: null, gate: gate, reached: false };
     }
@@ -348,7 +351,7 @@
       return { granted: true, by: "bypass", gate: gate, reached: false };
     }
     var candidates = ACLS.filter(function (a) {
-      return a.level === "field" && a.op === "read" && a.target === field;
+      return a.level === "field" && a.op === op && a.target === field;
     });
     for (var i = 0; i < candidates.length; i++) {
       var acl = candidates[i];
@@ -367,7 +370,7 @@
   function managerNotesVisible(persona) {
     var visible = readableRecords(persona);
     if (visible.length === 0) return false;
-    return evaluateFieldRead("manager_notes", visible[0], persona).granted;
+    return evaluateFieldOp("read", "manager_notes", visible[0], persona).granted;
   }
 
   // ---------------------------------------------------------------------
@@ -442,7 +445,7 @@
     if (persona.bypass) {
       out.push(g("admin bypass"));
       out.push("The platform admin role short-circuits access control evaluation.");
-      out.push("None of the seven rules is consulted. All " + RECORDS.length + " records and all");
+      out.push("None of the " + ACLS.length + " rules is consulted. All " + RECORDS.length + " records and all");
       out.push("fields are returned because enforcement is skipped, not because it passed.");
       document.getElementById("trace").innerHTML = out.join("\n");
       return;
@@ -472,7 +475,7 @@
       out.push("  " + d("not reached") + h("  table-level read denied, so the field"));
       out.push(h("               rule is never evaluated"));
     } else {
-      var f = evaluateFieldRead("manager_notes", sample, persona);
+      var f = evaluateFieldOp("read", "manager_notes", sample, persona);
       out.push(h("  table gate passed, so field rules are reached"));
       if (f.granted) {
         firedRules[f.by] = true;
@@ -480,6 +483,24 @@
       } else {
         out.push("  " + d("DENY ") + h("  rule 7 requires x_2190973_safety.admin"));
         out.push(h("         column omitted from the list entirely"));
+      }
+    }
+
+    out.push("");
+    out.push(h("── field write: manager_notes ────────────"));
+    var editable = RECORDS.filter(function (r) { return evaluateTableOp("write", r, persona).granted; })[0];
+    if (!editable) {
+      out.push("  " + d("not reached") + h("  table-level write denied, so the field"));
+      out.push(h("               rule is never evaluated"));
+    } else {
+      var fw = evaluateFieldOp("write", "manager_notes", editable, persona);
+      out.push(h("  table gate passed, so field rules are reached"));
+      if (fw.granted) {
+        firedRules[fw.by] = true;
+        out.push("  " + g("GRANT") + h("  by rule " + fw.by));
+      } else {
+        out.push("  " + d("DENY ") + h("  rule 8 requires x_2190973_safety.admin"));
+        out.push(h("         field stays read-only on records this role can edit"));
       }
     }
 
@@ -505,17 +526,19 @@
   }
 
   function renderMatrix(persona) {
-    var html = "<table><thead><tr><th>Record</th><th>Read</th><th>Write</th><th>Delete</th><th>manager_notes</th></tr></thead><tbody>";
+    var html = "<table><thead><tr><th>Record</th><th>Read</th><th>Write</th><th>Delete</th><th>manager_notes read</th><th>manager_notes write</th></tr></thead><tbody>";
     RECORDS.forEach(function (r) {
       html += "<tr><td class='mono'>" + esc(r.number) + "</td>";
       ["read", "write", "delete"].forEach(function (op) {
         var res = evaluateTableOp(op, r, persona);
         html += "<td>" + badge(res.granted, res.by) + "</td>";
       });
-      var f = evaluateFieldRead("manager_notes", r, persona);
-      html += "<td>" + (f.gate.granted
-        ? badge(f.granted, f.by)
-        : '<span class="badge neutral">not reached</span>') + "</td>";
+      ["read", "write"].forEach(function (op) {
+        var f = evaluateFieldOp(op, "manager_notes", r, persona);
+        html += "<td>" + (f.gate.granted
+          ? badge(f.granted, f.by)
+          : '<span class="badge neutral">not reached</span>') + "</td>";
+      });
       html += "</tr>";
     });
     html += "</tbody></table>";
