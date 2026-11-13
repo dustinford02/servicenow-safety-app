@@ -4,8 +4,10 @@ name: Documentation drift
 #
 # This check answers one question: does this repository still tell the
 # truth about itself? It compares the README's file tree and relative
-# links against what is actually committed, and the GitHub repository
-# description against the README's own figures.
+# links against what is actually committed, the README's access control
+# and record-count tables and the simulator's rule list against the
+# update set, and the GitHub repository description against the README's
+# own figures.
 #
 # The schedule is the important trigger. Documentation drift is not
 # caused by the commit that edits the README; it is caused by the commit
@@ -21,7 +23,11 @@ on:
     branches: [main]
     paths:
       - '**/README.md'
+      - 'docs/**.md'
+      - 'demo/index.html'
+      - 'update-set/**.xml'
       - 'tools/doc_drift.py'
+      - 'tools/acl_audit.py'
       - '.github/workflows/doc-drift.yml'
   schedule:
     # 07:19 UTC every Monday.
@@ -61,7 +67,9 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Check for documentation drift
-        # Exit 1 = a README claims a file or link that does not exist.
+        # Exit 1 = a README claims a file or link that does not exist, or
+        #          describes access controls or record counts that the
+        #          update set does not contain.
         # Exit 2 = no README was found, so nothing could be checked. Both
         #          fail the job: a repository this check cannot read must
         #          never be reported as clean.
