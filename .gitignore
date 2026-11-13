@@ -20,3 +20,7 @@ credentials*
 *.pdf
 !docs/**/*.pdf
 !screenshots/**/*.pdf
+
+# Python bytecode from running tools/ locally
+__pycache__/
+*.pyc

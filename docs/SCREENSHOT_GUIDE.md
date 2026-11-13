@@ -40,7 +40,9 @@ The dictionary entries for the table, or the field list in Studio.
 
 ### `04-access-controls-list.png`
 The access control list filtered to `x_2190973_safety`.
-**Shows:** all seven rules, their operations, and which carry conditions.
+**Shows:** all eight rules, their operations, and which carry conditions. The
+committed image was captured before rule 8 (`manager_notes` write) existed and shows
+seven rows; recapture it after importing the current update set.
 **Why:** this is the single most important image in the set. It shows per-operation
 rules and the field-level rule in one frame.
 

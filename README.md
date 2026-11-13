@@ -8,7 +8,7 @@ control, and form and list configuration.
 **Scope:** `x_2190973_safety` | **Platform:** ServiceNow Zurich, Personal Developer Instance
 
 **[Open the access control simulator](https://dustinford02.github.io/servicenow-safety-app/demo/)**,
-a browser-based model of the seven rules described below. No instance, no sign-in.
+a browser-based model of the eight rules described below. No instance, no sign-in.
 
 ---
 
@@ -38,13 +38,13 @@ model underneath it.
 
 | Competency | Where to look |
 |:--|:--|
-| Scoped application design | `x_2190973_safety` namespace, application menu, modules |
+| Scoped application design | `x_2190973_safety` namespace, application menu and module open to both roles |
 | Custom table creation | `x_2190973_safety_safety_issue` |
 | Field design including reference fields | `assigned_to` (reference to `sys_user`), `manager_notes` |
 | Role definition | `x_2190973_safety.user`, `x_2190973_safety.admin` |
-| Per-operation access control | 7 ACLs covering create, read, write, delete |
+| Per-operation access control | 8 ACLs covering create, read, write, delete |
 | Row-level security | Dynamic condition restricting users to their own records |
-| Field-level access control | `manager_notes` readable only by the admin role |
+| Field-level access control | `manager_notes` readable and writable only by the admin role |
 | Form and list configuration | Form layout and list layout records |
 | Application packaging | Published to a named, exportable update set |
 
@@ -55,8 +55,13 @@ model underneath it.
 This is the part I would want to be asked about.
 
 The application defines two roles. `x_2190973_safety.user` is the ordinary
-participant. `x_2190973_safety.admin` is the manager. Seven access controls
+participant. `x_2190973_safety.admin` is the manager. Eight access controls
 distribute permissions between them.
+
+Neither role contains the other, so each access control names every role it grants,
+and the application menu and the Safety Issues module list both roles. A manager
+holding only `x_2190973_safety.admin` can open the application they administer
+without also being given the ordinary user role.
 
 ### Access controls, as built
 
@@ -69,11 +74,13 @@ distribute permissions between them.
 | 5 | write | table | admin | none |
 | 6 | delete | table | admin | none |
 | 7 | read | `manager_notes` field | admin | none |
+| 8 | write | `manager_notes` field | admin | none |
 
-![The seven access control rules for the x_2190973_safety scope](screenshots/04-access-controls-list.png)
+![The access control rules for the x_2190973_safety scope, captured before rule 8 was added](screenshots/04-access-controls-list.png)
 
-*Two rows carry a condition restricting rows to the current user. The seventh row is the
-field-level rule on `manager_notes`.*
+*Captured before rule 8 was added, so the list shows seven rows. Two rows carry a condition
+restricting rows to the current user. The seventh row is the field-level read rule on
+`manager_notes`.*
 
 **The same list, as two different roles.**
 
@@ -87,7 +94,7 @@ records instead of four, and the `Manager Notes` column is not merely blank, it 
 present. That is rules 2, 4, and 7 running, not asserted.
 
 **[Try it interactively](demo/index.html).** A client-side simulator of these same
-seven rules, running as JavaScript in your browser with no ServiceNow platform behind
+eight rules, running as JavaScript in your browser with no ServiceNow platform behind
 it. Switch between four roles, including a platform administrator, and watch which
 rule grants or denies each operation, field access included. It reimplements the
 access controls for demonstration; the update set XML below remains the authoritative
@@ -107,19 +114,27 @@ administrator sees everything. This is a declarative condition rather than a
 scripted ACL, which is the right default: it is readable by someone who does not
 write JavaScript, and it survives upgrades without review.
 
-**Field-level control requires table-level control first.** Rule 7 restricts the
-`manager_notes` field to administrators. This rule is only meaningful because rules
+**Field-level control requires table-level control first.** Rule 7 restricts reading
+the `manager_notes` field to administrators. This rule is only meaningful because rules
 2 and 3 already grant table-level read access. ServiceNow evaluates table-level
 access controls before field-level ones, so a permissive field rule sitting behind
 a table that grants nothing would never be reached. Getting this ordering wrong is
 the single most common access-control mistake I have seen described, and rule 7 is
 where I proved to myself that I understood it.
 
-**One rule was created and then deleted.** The update history shows a field-level
-access control that I built and then removed. That was not tidying. It was the
-result of testing the evaluation order above and finding that the rule I had first
-written was not doing what I assumed. The deletion is the honest record of that,
-and I would rather leave it visible than clean it out of the history.
+**Hiding a field is not the same as protecting it.** Rule 7 alone left the write side
+open: rule 4 lets an ordinary user edit their own issues, and no rule in the
+application said that `manager_notes` was excluded from that. Rule 8 restricts writing
+the field to administrators, so a field a user cannot see is also a field they cannot
+set by another path, such as a list edit or a Table API call.
+
+**One rule was created and then deleted.** I built a field-level access control and
+then removed it. That was not tidying. It was the result of testing the evaluation
+order above and finding that the rule I had first written was not doing what I
+assumed. That deleted rule is not in the exported update set. What the export does
+record are two removed role grants: `DELETE` records taking `x_2190973_safety.user`
+off rule 3 and rule 6. I would rather leave those visible than clean them out of the
+history, and the ACL audit counts them as removals, not grants.
 
 ---
 
@@ -145,7 +160,10 @@ and I would rather leave it visible than clean it out of the history.
 │   └── 08-list-as-user.png
 ├── tools/
 │   ├── acl_audit.py                   Checker behind the ACL audit workflow
-│   └── doc_drift.py                   Checker behind the documentation drift workflow
+│   ├── acl_contract.json              The access controls and menu roles the audit asserts
+│   ├── doc_drift.py                   Checker behind the documentation drift workflow
+│   └── tests/
+│       └── test_acl_audit.py          Unit tests for the ACL audit
 └── update-set/
     └── Safety_v1.0.0_update_set.xml   Complete, importable application
 ```
@@ -155,34 +173,41 @@ and I would rather leave it visible than clean it out of the history.
 - **[Update set XML](https://github.com/dustinford02/servicenow-safety-app/blob/main/update-set/Safety_v1.0.0_update_set.xml)**: the complete, importable application.
 
 Two scheduled checks run against this repository rather than against an instance. One
-re-parses the packaged update set and re-audits the seven access controls. The other
-compares the file tree and the links in this README against what is actually
-committed, so a claim in this file cannot quietly outlive the file it describes.
+re-parses the packaged update set, ignores role grants recorded as deletions, and
+asserts the contract in `tools/acl_contract.json`: exactly these eight access controls
+with exactly these roles and conditions, and an application menu and module that both
+roles can open. The other compares the file tree and the links in this README, its
+access control and record-count tables, and the simulator's rule list against what is
+actually committed, so a claim in this file cannot quietly outlive the file it describes.
 
 ## Installing this application
 
 The update set XML is a complete package: table, fields, roles, access controls,
-form and list layouts, application menu and modules, plus four sample records.
+form and list layouts, application menu and modules. It contains no data: the four
+sample records in the screenshots were created on the development instance and are
+not part of the export, so create a few Safety Issue records after committing.
 
 1. In a target instance, go to **Retrieved Update Sets**.
 2. Choose **Import Update Set from XML** and upload
    `update-set/Safety_v1.0.0_update_set.xml`.
 3. Open the retrieved set and **Preview** it. Resolve any collisions.
 4. **Commit** the update set.
-5. Grant a test user `x_2190973_safety.user` and impersonate them to see the
-   row-level and field-level rules take effect.
+5. Grant a test user `x_2190973_safety.user`, assign some of the records to them,
+   and impersonate them to see the row-level and field-level rules take effect.
+6. Grant a second test user only `x_2190973_safety.admin` and impersonate them to
+   confirm a manager can open the application and edit Manager Notes.
 
-Step 5 is the one worth doing. The security model is invisible as an administrator,
+Steps 5 and 6 are the ones worth doing. The security model is invisible as an administrator,
 because administrators bypass it.
 
 ## Verification
 
-The packaged update set contains 36 configuration records:
+The packaged update set contains 38 configuration records:
 
 | Type | Count |
 |:--|--:|
-| Access Roles | 10 |
-| Access Control | 7 |
+| Access Roles | 11 |
+| Access Control | 8 |
 | Field Label | 3 |
 | Dictionary | 3 |
 | Application Menu | 2 |
@@ -194,6 +219,11 @@ The packaged update set contains 36 configuration records:
 | Form Layout | 1 |
 | List Layout | 1 |
 | Table Subscription Configuration | 1 |
+
+Two of the eleven Access Roles records are `DELETE` records, the removed grants
+described above, so nine role grants are live. Rule 8, its role grant, and the admin
+role on the application menu and module were added to this XML after the 2026-08-12
+export, which is why those records carry a later timestamp.
 
 The XML parses cleanly and contains no instance URL, credential, or personal data.
 
@@ -210,8 +240,9 @@ The XML parses cleanly and contains no instance URL, credential, or personal dat
 - **The table is standalone.** See the
   [design rationale](https://github.com/dustinford02/servicenow-safety-app/blob/main/docs/DESIGN_RATIONALE.md)
   for why, and for the argument against that choice.
-- **Four sample records.** Enough to demonstrate the access rules, not enough to
-  demonstrate anything about scale.
+- **No sample data in the package.** The four records in the screenshots lived on the
+  development instance and are not in the update set. Four records were enough to
+  demonstrate the access rules, not enough to demonstrate anything about scale.
 - **Built in a single working session.** The timestamps say so and I am not going
   to pretend otherwise.
 
